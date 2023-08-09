@@ -1,39 +1,136 @@
 <!DOCTYPE HTML>
-<!--
-	Aerial by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+
 <html>
-	<head>
-		<title>You need to add a title for your website here</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
-		<div id="wrapper">
-			<div id="bg"></div>
-			<div id="overlay"></div>
-			<div id="main">
-		
-			<div class="map-responsive">
-				<!-- The following iframe needs to be edited to your map -->
-				<iframe src="https://www.google.com/maps/d/u/0/embed?mid=1bJp9qgtExF6qMLBAYJkmm05rdigy0ik&ehbc=2E312F" width="640" height="480"></iframe>
-			</div>	
 
-				<!-- Footer -->
-					<footer id="footer">
-						<span class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>.</span>
-					</footer>
+<head>
+	
+	<title>Our Maple Grove Cemetery Vietnam War Heros</title>
 
-			</div>
-		</div>
-		<script>
-			window.onload = function() { document.body.classList.remove('is-preload'); }
-			window.ontouchmove = function() { return false; }
-			window.onorientationchange = function() { document.body.scrollTop = 0; }
-		</script>
-	</body>
+</head>
+
+
+<div id="Website"><a>
+<div id="Cemetery"><img class="Map"
+	src="cemetery.png"></img></div>
+<div id="American_Flag"><cite><a href="file:///C:/Users/CE%20Owner/Desktop/My%20Git%20Website/quinnjackson7797.github.io/quinnjackson7797.github.io/Test_Vet_Folder/index.html"><img class="Icon" 
+	src="American_Flag.jfif" alt=""></a></cite></img></div>
+</a></div>
+
+<div id="bar">_</div>
+<h2 id="text">Maple Grove Cemetery Vietnam War Heros</h2>
+	
+	<style>
+
+		#American_Flag {
+			border-radius: 100%;
+			width: 60px;
+			height: 60px;
+			border: 10px;
+			background-color: rgb(53, 53, 53);
+			position: relative;
+			transform: translate(400px, 220px);
+			object-fit: cover;
+
+		}
+
+		.Icon {
+			border-radius: 100%;
+			width: 50px;
+			height: 50px;
+			display: block;
+			position: relative;
+			transform: translate(4px, 4px);
+
+		}
+
+		#Cemetery {
+			width: 3000%;
+			position: absolute
+
+		}
+
+		.Map {
+			width: 100%;
+			position: relative;
+			
+		}
+
+		#Website {
+			position: absolute;
+		}
+
+		#text {
+			position: absolute;
+			color: rgb(251, 255, 0);
+			margin-top: -40px;
+			margin-left: 5px;
+			width: 100%;
+			
+		}
+
+		#bar {
+			width: 110%;
+			height: 50px;
+			position: relative;
+			background-color: #000;
+			color: black;
+			margin-left: -8px;
+			margin-top: -8px;
+		}
+
+	</style>
+
+	<script>
+	//Make the DIV element draggagle:
+	dragElement(document.getElementById("Website"));
+	
+	function dragElement(elmnt) {
+	  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+	  if (document.getElementById(elmnt.id + "Cemetery")) {
+		/* if present, the header is where you move the DIV from:*/
+		document.getElementById(elmnt.id + "Cemetery").onmousedown = dragMouseDown;
+	  } else {
+		/* otherwise, move the DIV from anywhere inside the DIV:*/
+		elmnt.onmousedown = dragMouseDown;
+	  }
+	
+	  function dragMouseDown(e) {
+		e = e || window.event;
+		e.preventDefault();
+		// get the mouse cursor position at startup:
+		pos3 = e.clientX;
+		pos4 = e.clientY;
+		document.onmouseup = closeDragElement;
+		// call a function whenever the cursor moves:
+		document.onmousemove = elementDrag;
+	  }
+	
+	  function elementDrag(e) {
+		e = e || window.event;
+		e.preventDefault();
+		// calculate the new cursor position:
+		pos1 = pos3 - e.clientX;
+		pos2 = pos4 - e.clientY;
+		pos3 = e.clientX;
+		pos4 = e.clientY;
+		// set the element's new position:
+		elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+		elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+	  
+      // Restrict the draggable element within its container
+      const containerWidth = draggable.parentNode.clientWidth;
+      const containerHeight = draggable.parentNode.clientHeight;
+      const maxElementX = containerWidth - draggable.offsetWidth;
+      const maxElementY = containerHeight - draggable.offsetHeight;
+	
+	}
+	
+	  function closeDragElement() {
+		/* stop moving when mouse button is released:*/
+		document.onmouseup = null;
+		document.onmousemove = null;
+	  }
+	}
+	</script>
+
 </html>
